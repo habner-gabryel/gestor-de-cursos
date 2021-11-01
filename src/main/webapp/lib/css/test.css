@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+.footer_div {
+	background: RGB(47, 46, 104) !important;
+}
+.footer_content {
+	color: white;
+	padding-top: 15px;
+}
+
+.header_div {
+	background: RGB(47, 46, 104) !important;
+	color: white;
+	padding-top: 35px;
+	height: 25%;
+}
+.menu_tag {
+	color: RGB(7, 145, 213);
+}
