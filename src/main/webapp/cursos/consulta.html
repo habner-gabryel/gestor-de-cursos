@@ -26,7 +26,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="http://localhost/LojaVirtuall/Controller" method="post">
               <div class="form-group">
                 <div class="col-sm-2">
                   <label for="inputEmail3" class="control-label">Informar o CURSO:</label>
@@ -35,6 +35,8 @@
                   <input type="number" name="cdcurso" class="form-control" placeholder="CURSO" required>
                 </div>
               </div>
+              <input type="hidden" name="id_formulario" value="2">
+              <input type="hidden" name="tipo_formulario" value="22">
               <button type="submit" class="btn btn-danger">Consultar</button>
             </form>
           </div>

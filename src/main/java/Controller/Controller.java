@@ -2,6 +2,9 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,10 +37,17 @@ public class Controller extends HttpServlet {
 		int idFormulario;
 		int tipoFormulario;
 		String cpfMask;
+		
 		Long cpf;
 		String nome;
 		String email;
 		
+		Integer cursoId;
+		Double valor;
+		String site;
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Date data;
 		
 		idFormulario = Integer.parseInt(request.getParameter("id_formulario"));
 		tipoFormulario = Integer.parseInt(request.getParameter("tipo_formulario"));
@@ -97,10 +107,130 @@ public class Controller extends HttpServlet {
 					break;
 				}
 			}
-		}else if (idFormulario == 2) {
+		}else if (idFormulario == 2) {	//Cursos
 			
-		}else if (idFormulario == 3) {
+			switch (tipoFormulario) {
+				case 21:{	//Consultar todos
+					
+					break;
+				}
+				case 22:{	//Consultar curso específico
+					
+					cursoId = Integer.parseInt(request.getParameter("curso"));
+					
+					out.println("<h2>Cursos -> Consulta de curso </h2>");
+					
+					break;
+				}
+				case 23:{	//Cadastrar curso
+					
+					cursoId = Integer.parseInt(request.getParameter("curso"));
+					
+					nome = request.getParameter("nome");
+					
+					valor = Double.parseDouble(request.getParameter("valor"));
+					
+					site = request.getParameter("site");
+					
+					out.println("<h2>Cursos -> Cadastro de curso </h2>");
+					
+					break;
+				}
+				case 24:{	//Alterar curso
+					
+					cursoId = Integer.parseInt(request.getParameter("curso"));
+					
+					nome = request.getParameter("nome");
+					
+					valor = Double.parseDouble(request.getParameter("valor"));
+					
+					site = request.getParameter("site");
+					
+					out.println("<h2>Cursos -> Alteração de curso </h2>");
+					
+					break;
+				}
+				case 25:{	//Excluir curso
+					
+					cursoId = Integer.parseInt(request.getParameter("curso"));
+					
+					out.println("<h2>Cursos -> Exclusão de curso </h2>");
+					
+					break;
+				}
+			}
 			
+		}else if (idFormulario == 3) {	//Pagamentos
+			
+			switch (tipoFormulario) {
+			case 31:{	//Consultar todos
+				
+				break;
+			}
+			case 32:{	//Consultar pagamento específico
+				
+				cursoId = Integer.parseInt(request.getParameter("curso"));
+				
+				cpfMask = request.getParameter("cpf");
+				cpfMask = cpfMask.replaceAll("[.-]",""); 
+				cpf = Long.parseLong(cpfMask);
+				
+				out.println("<h2>Pagamentos -> Consulta de pagamento </h2>");
+				
+				break;
+			}
+			case 33:{	//Cadastrar pagamento
+				
+				cpfMask = request.getParameter("cpf");
+				cpfMask = cpfMask.replaceAll("[.-]",""); 
+				cpf = Long.parseLong(cpfMask);
+				
+				try {
+					data = sdf.parse(request.getParameter("data"));
+				} catch (ParseException e) {
+					
+				}
+				
+				cursoId = Integer.parseInt(request.getParameter("curso"));
+				
+
+				
+				out.println("<h2>Pagamentos -> Cadastro de pagamento </h2>");
+				
+				break;
+			}
+			case 34:{	//Alterar pagamento
+
+				cpfMask = request.getParameter("cpf");
+				cpfMask = cpfMask.replaceAll("[.-]",""); 
+				cpf = Long.parseLong(cpfMask);
+
+				cursoId = Integer.parseInt(request.getParameter("curso"));
+
+				try {
+					data = sdf.parse(request.getParameter("data"));
+				} catch (ParseException e) {
+					
+				}
+				
+				
+				out.println("<h2>Pagamentos -> Alteração de pagamento </h2>");
+				
+				break;
+			}
+			case 35:{	//Excluir pagamento
+				
+				cpfMask = request.getParameter("cpf");
+				cpfMask = cpfMask.replaceAll("[.-]",""); 
+				cpf = Long.parseLong(cpfMask);
+				
+				cursoId = Integer.parseInt(request.getParameter("curso"));
+				
+				out.println("<h2>Pagamentos -> Exclusão de pagamento </h2>");
+				
+				break;
+			}
+		}
 		}
 	}
 
