@@ -2,9 +2,6 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,18 +36,16 @@ public class Controller extends HttpServlet {
 		String cpfMask;
 		
 		Long cpf;
-		String nome;
-		String email;
+		String nome,email;
 		
-		Integer cursoId;
-		Double valor;
-		String site;
+		Long cursoId;
+		String valor, site;
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		Date data;
+		String data;
 		
 		idFormulario = Integer.parseInt(request.getParameter("id_formulario"));
 		tipoFormulario = Integer.parseInt(request.getParameter("tipo_formulario"));
+
 		
 		if (idFormulario == 1) {	//Clientes
 			switch (tipoFormulario) {
@@ -107,6 +102,7 @@ public class Controller extends HttpServlet {
 					break;
 				}
 			}
+			
 		}else if (idFormulario == 2) {	//Cursos
 			
 			switch (tipoFormulario) {
@@ -116,7 +112,7 @@ public class Controller extends HttpServlet {
 				}
 				case 22:{	//Consultar curso específico
 					
-					cursoId = Integer.parseInt(request.getParameter("curso"));
+					cursoId = Long.parseLong(request.getParameter("curso"));
 					
 					out.println("<h2>Cursos -> Consulta de curso </h2>");
 					
@@ -124,11 +120,11 @@ public class Controller extends HttpServlet {
 				}
 				case 23:{	//Cadastrar curso
 					
-					cursoId = Integer.parseInt(request.getParameter("curso"));
+					cursoId = Long.parseLong(request.getParameter("curso"));
 					
 					nome = request.getParameter("nome");
 					
-					valor = Double.parseDouble(request.getParameter("valor"));
+					valor = request.getParameter("valor");
 					
 					site = request.getParameter("site");
 					
@@ -138,11 +134,11 @@ public class Controller extends HttpServlet {
 				}
 				case 24:{	//Alterar curso
 					
-					cursoId = Integer.parseInt(request.getParameter("curso"));
+					cursoId = Long.parseLong(request.getParameter("curso"));
 					
 					nome = request.getParameter("nome");
 					
-					valor = Double.parseDouble(request.getParameter("valor"));
+					valor = request.getParameter("valor");
 					
 					site = request.getParameter("site");
 					
@@ -152,7 +148,7 @@ public class Controller extends HttpServlet {
 				}
 				case 25:{	//Excluir curso
 					
-					cursoId = Integer.parseInt(request.getParameter("curso"));
+					cursoId = Long.parseLong(request.getParameter("curso"));
 					
 					out.println("<h2>Cursos -> Exclusão de curso </h2>");
 					
@@ -163,74 +159,65 @@ public class Controller extends HttpServlet {
 		}else if (idFormulario == 3) {	//Pagamentos
 			
 			switch (tipoFormulario) {
-			case 31:{	//Consultar todos
-				
-				break;
-			}
-			case 32:{	//Consultar pagamento específico
-				
-				cursoId = Integer.parseInt(request.getParameter("curso"));
-				
-				cpfMask = request.getParameter("cpf");
-				cpfMask = cpfMask.replaceAll("[.-]",""); 
-				cpf = Long.parseLong(cpfMask);
-				
-				out.println("<h2>Pagamentos -> Consulta de pagamento </h2>");
-				
-				break;
-			}
-			case 33:{	//Cadastrar pagamento
-				
-				cpfMask = request.getParameter("cpf");
-				cpfMask = cpfMask.replaceAll("[.-]",""); 
-				cpf = Long.parseLong(cpfMask);
-				
-				try {
-					data = sdf.parse(request.getParameter("data"));
-				} catch (ParseException e) {
+				case 31:{	//Consultar todos
 					
+					break;
 				}
-				
-				cursoId = Integer.parseInt(request.getParameter("curso"));
-				
-
-				
-				out.println("<h2>Pagamentos -> Cadastro de pagamento </h2>");
-				
-				break;
-			}
-			case 34:{	//Alterar pagamento
-
-				cpfMask = request.getParameter("cpf");
-				cpfMask = cpfMask.replaceAll("[.-]",""); 
-				cpf = Long.parseLong(cpfMask);
-
-				cursoId = Integer.parseInt(request.getParameter("curso"));
-
-				try {
-					data = sdf.parse(request.getParameter("data"));
-				} catch (ParseException e) {
+				case 32:{	//Consultar pagamento específico
 					
+					cursoId = Long.parseLong(request.getParameter("curso"));
+					
+					cpfMask = request.getParameter("cpf");
+					cpfMask = cpfMask.replaceAll("[.-]",""); 
+					cpf = Long.parseLong(cpfMask);
+					
+					out.println("<h2>Pagamentos -> Consulta de pagamento </h2>");
+					
+					break;
 				}
-				
-				
-				out.println("<h2>Pagamentos -> Alteração de pagamento </h2>");
-				
-				break;
+				case 33:{	//Cadastrar pagamento
+					
+					cpfMask = request.getParameter("cpf");
+					cpfMask = cpfMask.replaceAll("[.-]",""); 
+					cpf = Long.parseLong(cpfMask);
+
+					data = request.getParameter("data");
+
+					
+					cursoId = Long.parseLong(request.getParameter("curso"));
+					
+	
+					
+					out.println("<h2>Pagamentos -> Cadastro de pagamento </h2>");
+					
+					break;
+				}
+				case 34:{	//Alterar pagamento
+
+					cpfMask = request.getParameter("cpf");
+					cpfMask = cpfMask.replaceAll("[.-]",""); 
+					cpf = Long.parseLong(cpfMask);
+
+					cursoId = Long.parseLong(request.getParameter("curso"));
+					data = request.getParameter("data");
+
+					out.println("<h2>Pagamentos -> Alteração de pagamento </h2>" + data);
+
+					break;
+				}
+				case 35:{	//Excluir pagamento
+
+					cpfMask = request.getParameter("cpf");
+					cpfMask = cpfMask.replaceAll("[.-]",""); 
+					cpf = Long.parseLong(cpfMask);
+
+					cursoId = Long.parseLong(request.getParameter("curso"));
+
+					out.println("<h2>Pagamentos -> Exclusão de pagamento </h2>");
+
+					break;
+				}
 			}
-			case 35:{	//Excluir pagamento
-				
-				cpfMask = request.getParameter("cpf");
-				cpfMask = cpfMask.replaceAll("[.-]",""); 
-				cpf = Long.parseLong(cpfMask);
-				
-				cursoId = Integer.parseInt(request.getParameter("curso"));
-				
-				out.println("<h2>Pagamentos -> Exclusão de pagamento </h2>");
-				
-				break;
-			}
-		}
 		}
 	}
 
