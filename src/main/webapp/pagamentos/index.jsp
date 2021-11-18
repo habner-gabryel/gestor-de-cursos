@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp"/>
 <html>
 	<head>
 	    <meta charset="utf-8">
@@ -27,11 +28,11 @@
           <div class="col-md-12 text-center">
             <h3 class="menu_tag">&gt;&gt; PAGAMENTOS &lt;&lt;</h3>
             <div class="col-md-12  btn-group btn-group-lg btn-group-vertical">
-              <a href="#" class="btn btn-default">Consultar Todos os Pagamentos</a>
-              <a href="consulta.html" class="btn btn-default">Consultar um Pagamento Específico</a>
-              <a href="cadastro.html" class="btn btn-default">Cadastrar um Novo Pagamento</a>
-              <a href="alteracao.html" class="btn btn-default">Alterar um Pagamento</a>
-              <a href="exclusao.html" class="btn btn-default">Excluir um Pagamento</a>
+              <a href="view.jsp" class="btn btn-default">Consultar Todos os Pagamentos</a>
+              <a href="consulta.jsp" class="btn btn-default">Consultar um Pagamento Específico</a>
+              <a href="cadastro.jsp" class="btn btn-default">Cadastrar um Novo Pagamento</a>
+              <a href="alteracao.jsp" class="btn btn-default">Alterar um Pagamento</a>
+              <a href="exclusao.jsp" class="btn btn-default">Excluir um Pagamento</a>
             </div>
           </div>
         </div>

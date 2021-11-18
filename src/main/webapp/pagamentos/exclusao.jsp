@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp"/>
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,31 +22,31 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="menu_tag">&gt;&gt; PAGAMENTOS - CONSULTAR UM PAGAMENTO &lt;&lt;</h3>
+            <h3 class="menu_tag">&gt;&gt; PAGAMENTOS - EXCLUIR UM PAGAMENTO &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <form class="form-horizontal" role="form" action="http://localhost/LojaVirtuall/Controller" method="post">
               <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputCPF" class="control-label">Informar o CPF:</label>
+                <div class="col-sm-3">
+                  <label for="inputCPF" class="control-label">Informar o CPF a ser EXCLUÍDO::</label>
                 </div>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="cpf" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="cpf" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx">
                 </div>
               </div>
               <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputCURSO" class="control-label">Informar o CURSO:</label>
+                <div class="col-sm-3">
+                  <label for="inputCURSO" class="control-label">Informar o CURSO a ser EXCLUÍDO:</label>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                   <input type="number" class="form-control" name="curso" id="inputCURSO" placeholder="CURSO" required>
                 </div>
               </div>
               <input type="hidden" name="id_formulario" value="3">
-              <input type="hidden" name="tipo_formulario" value="32">
-              <button type="submit" class="btn btn-danger">Consultar</button>
+              <input type="hidden" name="tipo_formulario" value="35">
+              <button type="submit" class="btn btn-danger">Excluir</button>
             </form>
           </div>
         </div>
@@ -61,7 +62,7 @@
       </div>
     </div>
   
-    <footer>
+   <footer>
       <div class="navbar navbar-fixed-bottom footer_div">
         <div class="container">
           <div class="row footer_content">
