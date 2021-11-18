@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp"/>
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="menu_tag">&gt;&gt; CURSOS - CADASTRAR UM NOVO CURSO &lt;&lt;</h3>
+            <h3 class="menu_tag">&gt;&gt; CURSOS - ALTERAR UM CURSO &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -32,7 +33,7 @@
                   <label for="inputCURSO" class="control-label">Informar o CURSO:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="number" name="cdcurso" class="form-control" required id="inputCURSO" placeholder="Curso">
+                  <input type="number" name="cdcurso" class="form-control" id="inputCURSO" placeholder="Curso" required>
                 </div>
               </div>
               <div class="form-group">
@@ -40,7 +41,7 @@
                   <label for="inputNome" class="control-label">Informar o NOME:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" name="nome" class="form-control" required id="inputNome" placeholder="Nome">
+                  <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
                 </div>
               </div>
               <div class="form-group">
@@ -48,7 +49,7 @@
                   <label for="inputVALOR" class="control-label">Informar o VALOR:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="number" name="valor" class="form-control" required id="inputVALOR" placeholder="Valor">
+                  <input type="number" name="valor" class="form-control" id="inputVALOR" placeholder="Valor" required>
                 </div>
               </div>
               <div class="form-group">
@@ -56,12 +57,12 @@
                   <label for="inputSITE" class="control-label">Informar o SITE:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="url" name="site" class="form-control" required id="inputSITE" placeholder="Site">
+                  <input type="url" name="site" class="form-control" id="inputSITE" placeholder="Site" required>
                 </div>
               </div>
               <input type="hidden" name="id_formulario" value="2">
-              <input type="hidden" name="tipo_formulario" value="23">
-              <button type="submit" class="btn btn-danger">Cadastrar</button>
+              <input type="hidden" name="tipo_formulario" value="24">
+              <button type="submit" class="btn btn-danger">Alterar</button>
             </form>
           </div>
         </div>
@@ -76,15 +77,14 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="navbar navbar-fixed-bottom footer_div">
-        <div class="container">
-          <div class="row footer_content">
-            <div class="col-sm-12 text-center">Desenvolvedor Jr.</div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  
+	<footer>
+		<div class="navbar navbar-fixed-bottom footer_div">
+			<div class="container">
+				<div class="row footer_content">
+					<div class="col-sm-12 text-center">Desenvolvedor Jr.</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </body></html>

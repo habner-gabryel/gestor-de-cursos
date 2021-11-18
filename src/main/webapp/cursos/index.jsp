@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp"/>
 <html>
 	<head>
 	    <meta charset="utf-8">
@@ -27,11 +28,11 @@
           <div class="col-md-12 text-center">
             <h3 class="menu_tag">&gt;&gt; CURSOS &lt;&lt;</h3>
             <div class="col-md-12  btn-group btn-group-lg btn-group-vertical">
-              <a href="#" class="btn btn-default">Consultar Todos os Cursos</a>
-              <a href="consulta.html" class="btn btn-default">Consultar um Curso Específico</a>
-              <a href="cadastro.html" class="btn btn-default">Cadastrar um Novo Curso</a>
-              <a href="alteracao.html" class="btn btn-default">Alterar um Curso</a>
-              <a href="exclusao.html" class="btn btn-default">Excluir um Curso</a>
+              <a href="view.jsp" class="btn btn-default">Consultar Todos os Cursos</a>
+              <a href="consulta.jsp" class="btn btn-default">Consultar um Curso Específico</a>
+              <a href="cadastro.jsp" class="btn btn-default">Cadastrar um Novo Curso</a>
+              <a href="alteracao.jsp" class="btn btn-default">Alterar um Curso</a>
+              <a href="exclusao.jsp" class="btn btn-default">Excluir um Curso</a>
             </div>
           </div>
         </div>
