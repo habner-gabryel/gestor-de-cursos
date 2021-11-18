@@ -1,3 +1,4 @@
+<jsp:include page="util/topo.jsp"/>
 <html>
 	<head>
 	    <meta charset="utf-8">
@@ -6,7 +7,7 @@
 	    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
 	    <link href="lib/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	    <link href="lib/css/bootstrap.css" rel="stylesheet" type="text/css">
-	     <link href="lib/css/padrao.css" rel="stylesheet" type="text/css">
+	    <link href="lib/css/padrao.css" rel="stylesheet" type="text/css">
 		<link href="lib/css/test.css" rel="stylesheet" type="text/css">
 	</head>
 	
@@ -29,6 +30,15 @@
               <a href="cursos/index.html" class="btn btn-default">CURSOS</a>
               <a href="pagamentos/index.html" class="btn btn-default">PAGAMENTOS</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-left">
+          		<a class="btn btn-default" href="http://localhost/LojaVirtuall/logout.jsp">Sair</a>
           </div>
         </div>
       </div>
